@@ -10,5 +10,4 @@ apache_files_zip(){
     echo "failed to zip"
     exit 1
   fi
-  # use tar.gz  to compress
 }
