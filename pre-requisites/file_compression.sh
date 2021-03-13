@@ -13,5 +13,5 @@ apache_files_zip(){
 }
 
 display_file_size(){
-  du -h apache_files.zip
+  du -sh apache_files.zip
 }
