@@ -24,5 +24,6 @@ display_file_size
 # Executing aws-account-setup
 configure_user
 verify_user_id
+create_s3_bucket
 
 
