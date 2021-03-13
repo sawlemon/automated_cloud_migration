@@ -7,6 +7,7 @@ then
     echo "Valid User"
 else
     echo "Invalid user"
+    exit 1
 fi
 
 # Success
