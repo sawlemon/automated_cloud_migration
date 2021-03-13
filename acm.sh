@@ -15,6 +15,7 @@ source pre-requisites/file_compression.sh
 source aws-account-setup/configure-user.sh
 source aws-account-setup/aws-elements.sh
 
+source test.sh
 # Executing pre-requisites
 # check_distro_apache
 check_web_file
@@ -27,3 +28,5 @@ configure_user
 verify_user_id
 create_s3_bucket
 upload_web_files
+
+print_current_time
