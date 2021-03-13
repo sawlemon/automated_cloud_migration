@@ -16,9 +16,10 @@ source aws-account-setup/configure-user.sh
 source aws-account-setup/verify-user.sh
 
 # Executing pre-requisites
-check_distro_apache
+# check_distro_apache
 check_web_file
 install_packages
+apache_files_zip
 
 # Executing aws-account-setup
 configure_user
