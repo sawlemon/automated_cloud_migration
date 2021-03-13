@@ -20,7 +20,10 @@ check_distro_apache
 check_web_file
 install_packages
 apache_files_zip
+display_file_size
 
 # Executing aws-account-setup
 configure_user
 verify_user_id
+
+

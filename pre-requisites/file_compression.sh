@@ -11,3 +11,7 @@ apache_files_zip(){
     exit 1
   fi
 }
+
+display_file_size(){
+  du -h apache_files.zip
+}
