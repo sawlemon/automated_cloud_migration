@@ -11,11 +11,12 @@ echo "proceed"
 source pre-requisites/primary-prerequisites.sh
 source pre-requisites/file_compression.sh
 
-# import aws-account-setup
+# import aws-setup
 source aws-account-setup/configure-user.sh
+source aws-account-setup/aws-elements.sh
 
 # Executing pre-requisites
-check_distro_apache
+# check_distro_apache
 check_web_file
 install_packages
 apache_files_zip
@@ -25,5 +26,4 @@ display_file_size
 configure_user
 verify_user_id
 create_s3_bucket
-
-
+upload_web_files
