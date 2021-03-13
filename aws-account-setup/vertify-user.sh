@@ -1,8 +1,8 @@
 #!/bin/bash
 # To test te aws credentials
 
-aws sts get-caller-identity
-if [[ $? -eq 0 ]];
+# aws sts get-caller-identity
+if [ `aws sts get-caller-identity > /dev/null && echo $? -eq 0` ]; 
 then
     echo "Valid User"
 else
