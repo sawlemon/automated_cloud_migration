@@ -13,7 +13,6 @@ source pre-requisites/file_compression.sh
 
 # import aws-account-setup
 source aws-account-setup/configure-user.sh
-source aws-account-setup/verify-user.sh
 
 # Executing pre-requisites
 check_distro_apache

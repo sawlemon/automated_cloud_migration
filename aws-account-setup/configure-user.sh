@@ -15,3 +15,15 @@ configure_user(){
         sudo rm  -rf awscliv2.zip aws
     fi
 }
+
+# To test te aws credentials
+verify_user_id(){
+    if [ `aws sts get-caller-identity > /dev/null && echo $? -eq 0` ]; 
+    then
+        echo "Valid User"
+    else
+        echo "Invalid user"
+        aws configure
+        exit 1
+    fi
+}
