@@ -1,9 +1,10 @@
 
 
 function apacheFileCompression() {
-  # echo "Compressing apache server files"
-  # zip apache.zip *
+  echo "Compressing apache server files"
+  
+
   # use tar.gz  to compress
-  # echo "Compression completed saved as apache.zip"
+  echo "Compression completed saved as apache.zip"
 }
 
