@@ -1,5 +1,8 @@
+#!/bin/bash
 
 
+
+# Compress the web folders
 apache_files_zip(){
   echo "Compressing apache server files"
   sudo zip -r apache_files.zip /var/www/
@@ -12,6 +15,10 @@ apache_files_zip(){
   fi
 }
 
+
+
+# Display the the size of the files 
 display_file_size(){
   du -sh apache_files.zip
+  du -sh mysql_database.sql 
 }
