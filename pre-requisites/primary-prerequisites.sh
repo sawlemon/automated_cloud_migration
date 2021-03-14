@@ -37,6 +37,16 @@ check_web_file(){
     fi
 }
 
+# Check Whether MySQK Database is installed
+check_mysql(){
+    if [ `sudo mysql -v &> /dev/null && echo $? -eq "0"` ]; then
+        echo "mysql found"
+    else
+        echo "mysql not found"
+        exit 1
+    fi
+}
+
 # Install requirted packages
 install_packages(){
     sudo apt install -y curl zip unzip

@@ -1,7 +1,8 @@
 #!/bin/bash
 
+
+
 # Cheks whether aws cli is installed, if not instlls
-# aws --help >> /dev/null
 configure_user(){
     if [ `sudo aws --help > /dev/null && echo $? -eq 0` ]; 
     then
@@ -15,6 +16,8 @@ configure_user(){
         sudo rm  -rf awscliv2.zip aws
     fi
 }
+
+
 
 # To test te aws credentials
 verify_user_id(){

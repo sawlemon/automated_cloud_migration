@@ -10,23 +10,33 @@ echo "proceed"
 # Importing pre-requisites
 source pre-requisites/primary-prerequisites.sh
 source pre-requisites/file_compression.sh
+source pre-requisites/database_dump.sh
 
 # import aws-setup
 source aws-account-setup/configure-user.sh
 source aws-account-setup/aws-elements.sh
 
-source test.sh
+# source test.sh
+
+
 # Executing pre-requisites
-# check_distro_apache
+
+check_distro_apache
 check_web_file
+check_mysql
 install_packages
 apache_files_zip
 display_file_size
+mysql_database_dumping
+
+
 
 # Executing aws-account-setup
+
 configure_user
 verify_user_id
 create_s3_bucket
 upload_web_files
+upload_database_dump
 
-print_current_time
+# print_current_time
