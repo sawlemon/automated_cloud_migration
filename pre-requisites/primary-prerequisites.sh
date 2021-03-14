@@ -35,12 +35,12 @@ check_distro_apache(){
 
 # Checks whether index.html is present
 check_web_file(){
-    if [ ! -f /var/www/index.html ]; then
+    if [ ! -f /var/www/html/index.html ]; then
         echo "HTML index file not found"
         exit 1
     fi
 }
-
+# maybe change this to directory
 
 
 # Check Whether MySQK Database is installed
