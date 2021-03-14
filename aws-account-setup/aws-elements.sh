@@ -21,6 +21,6 @@ upload_web_files(){
 
 
 # Upload the database dump to S3
-upload_database_dump{
+upload_database_dump(){
     aws s3 cp mysql_database.sql s3://automated-cloud-management-$current_time --profile default --region ap-south-1
 }
