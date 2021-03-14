@@ -1,10 +1,14 @@
 #!/bin/bash
 
+
+
 # Dumping the database
-mysql_database_dumping() {
+mysql_database_dumping(){
 	read -p "Enter mysql database user name: " username
+    echo $username
 	read -p "Enter mysql database password: " password
-	mysqldump --all-databases -u $username -p $password > mysql_database.sql 
+    echo $password
+    mysqldump --all-databases -u $username -p $password > mysql_database.sql 
     if [ echo $? -eq 0 ]; then
         echo "database dump created"
     else
