@@ -16,9 +16,6 @@ source pre-requisites/database_dump.sh
 source aws-account-setup/configure-user.sh
 source aws-account-setup/aws-elements.sh
 
-# source test.sh
-
-
 # Executing pre-requisites
 
 check_distro_apache
