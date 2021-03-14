@@ -6,6 +6,8 @@ if [ "$(id -u)" != "0" ]; then
         exit 1
 fi
 
+
+
 # Determind The Linux Distribution running on 
 # Categorises RHEL or Debian
 check_distro_apache(){
@@ -29,6 +31,8 @@ check_distro_apache(){
     fi
 }
 
+
+
 # Checks whether index.html is present
 check_web_file(){
     if [ ! -f /var/www/index.html ]; then
@@ -37,15 +41,19 @@ check_web_file(){
     fi
 }
 
+
+
 # Check Whether MySQK Database is installed
 check_mysql(){
-    if [ `sudo mysql -v &> /dev/null && echo $? -eq "0"` ]; then
+    if [ `sudo mysql -V &> /dev/null && echo $? -eq "0"` ]; then
         echo "mysql found"
     else
         echo "mysql not found"
         exit 1
     fi
 }
+
+
 
 # Install requirted packages
 install_packages(){

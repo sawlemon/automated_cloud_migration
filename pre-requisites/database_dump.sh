@@ -10,7 +10,7 @@ mysql_database_dumping(){
     echo $password
     mysqldump --all-databases -u $username -p $password > mysql_database.sql 
     if [ echo $? -eq 0 ]; then
-        echo "database dump created"
+        echo "database dump created : mysql_database.sql"
     else
         echo "Database Username and password incorrect"
         exit 1

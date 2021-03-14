@@ -26,9 +26,8 @@ check_web_file
 check_mysql
 install_packages
 apache_files_zip
-display_file_size
 mysql_database_dumping
-
+display_file_size
 
 
 # Executing aws-account-setup
