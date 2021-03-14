@@ -24,6 +24,7 @@ verify_user_id(){
     if [ `aws sts get-caller-identity > /dev/null && echo $? -eq 0` ]; 
     then
         echo "Valid User"
+    # working incorrectly
     else
         echo "Invalid user"
         aws configure
