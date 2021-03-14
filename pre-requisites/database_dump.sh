@@ -8,7 +8,7 @@ mysql_database_dumping(){
     echo $username
 	read -p "Enter mysql database password: " password
     echo $password
-    mysqldump --all-databases -u $username -p $password > mysql_database.sql 
+    mysqldump --all-databases -u $username -p$password > mysql_database.sql 
     # Error Handling
     if [ `echo $? -eq 0` ]; 
     then
@@ -18,3 +18,8 @@ mysql_database_dumping(){
         exit 1
     fi
 }
+
+# username
+debian-sys-maint
+# password
+lIn7eRoheitf4hwM
