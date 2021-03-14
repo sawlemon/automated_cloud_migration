@@ -18,7 +18,6 @@ configure_user(){
 }
 
 
-
 # To test te aws credentials
 verify_user_id(){
     if [ `aws sts get-caller-identity > /dev/null && echo $? -eq 0` ];
