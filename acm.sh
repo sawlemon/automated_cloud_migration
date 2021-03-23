@@ -16,6 +16,9 @@ source pre-requisites/database_dump.sh
 source aws-account-setup/configure-user.sh
 source aws-account-setup/aws-elements.sh
 
+# importing aws infrastructure
+source infrastructure/create-template.sh
+
 # Executing pre-requisites
 
 check_distro_apache
@@ -35,4 +38,3 @@ create_s3_bucket
 upload_web_files
 upload_database_dump
 
-# print_current_time
