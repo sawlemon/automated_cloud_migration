@@ -333,6 +333,9 @@
                   "command" : { "Fn::Join" : ["", ["mysql -u root --password='", { "Ref" : "DBRootPassword" }, "' < /tmp/setup.mysql"]]},
                   "test" : { "Fn::Join" : ["", ["$(mysql ", { "Ref" : "DBName" }, " -u root --password='", { "Ref" : "DBRootPassword" }, "' >/dev/null 2>&1 </dev/null); (( $? != 0 ))"]]}
                 },
+                "03_install aws_cli" : {
+                  "command" : "sudo apt -y update && sudo apt -y install awscli"
+                },
                 "03_copys3_bucket" : {
                     "command" :  "aws s3 cp s3://automated-cloud-management-2021-03-14 /home/ubuntu"
                     
@@ -386,7 +389,7 @@
               {
                 "Effect" : "Allow",
                 "Action" : [
-                  "s3:List*"
+                  "s3:*"
                 ],
                 "Resource" : "*"
               }
