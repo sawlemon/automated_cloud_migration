@@ -213,7 +213,6 @@
         "us-west-1"        : {"HVM64" : "ami-088c153f74339f34c", "HVMG2" : "ami-0a7fc72dc0e51aa77"},
         "us-west-2"        : {"HVM64" : "ami-01fee56b22f308154", "HVMG2" : "ami-0fe84a5b4563d8f27"}
       }
-  
     },
       
     "Resources" : {     
@@ -303,7 +302,6 @@
                   "owner" : "apache",
                   "group" : "apache"
                 },
-  
                 "/tmp/setup.mysql" : {
                   "content" : { "Fn::Join" : ["", [
                     "CREATE DATABASE ", { "Ref" : "DBName" }, ";\n",
