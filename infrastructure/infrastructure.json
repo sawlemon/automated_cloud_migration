@@ -6,7 +6,7 @@
     "Parameters" : {
         
       "KeyName": {
-        "Default" : "acm-ubuntu",
+        "Default": "acm-ubuntu",
         "Description" : "Name of an existing EC2 KeyPair to enable SSH access to the instance",
         "Type": "AWS::EC2::KeyPair::KeyName",
         "ConstraintDescription" : "must be the name of an existing EC2 KeyPair."
@@ -23,7 +23,7 @@
       },
   
       "DBUser": {
-        "Default" : "root",
+        "Default": "root",
         "NoEcho": "true",
         "Description" : "Username for MySQL database access",
         "Type": "String",
@@ -34,7 +34,7 @@
       },
   
       "DBPassword": {
-        "Default" : "root",
+        "Default": "root",
         "NoEcho": "true",
         "Description" : "Password for MySQL database access",
         "Type": "String",
@@ -45,7 +45,7 @@
       },
   
       "DBRootPassword": {
-        "Default" : "root",
+        "Default": "root",
         "NoEcho": "true",
         "Description" : "Root password for MySQL",
         "Type": "String",
@@ -312,42 +312,13 @@
                   "mode"  : "000400",
                   "owner" : "root",
                   "group" : "root"
-                },
-                "/etc/cfn/cfn-hup.conf" : {
-                  "content" : { "Fn::Join" : ["", [
-                    "[main]\n",
-                    "stack=", { "Ref" : "AWS::StackId" }, "\n",
-                    "region=", { "Ref" : "AWS::Region" }, "\n"
-                  ]]},
-                  "mode"    : "000400",
-                  "owner"   : "root",
-                  "group"   : "root"
-                },
-  
-                "/etc/cfn/hooks.d/cfn-auto-reloader.conf" : {
-                  "content": { "Fn::Join" : ["", [
-                    "[cfn-auto-reloader-hook]\n",
-                    "triggers=post.update\n",
-                    "path=Resources.WebServerInstance.Metadata.AWS::CloudFormation::Init\n",
-                    "action=/opt/aws/bin/cfn-init -v ",
-                    "         --stack ", { "Ref" : "AWS::StackName" },
-                    "         --resource WebServerInstance ",
-                    "         --configsets InstallAndRun ",
-                    "         --region ", { "Ref" : "AWS::Region" }, "\n",
-                    "runas=root\n"
-                  ]]},
-                  "mode"    : "000400",
-                  "owner"   : "root",
-                  "group"   : "root"
                 }
               },
   
               "services" : {
                 "sysvinit" : {  
                   "mysqld"  : { "enabled" : "true", "ensureRunning" : "true" },
-                  "httpd"   : { "enabled" : "true", "ensureRunning" : "true" },
-                  "cfn-hup" : { "enabled" : "true", "ensureRunning" : "true",
-                                "files" : ["/etc/cfn/cfn-hup.conf", "/etc/cfn/hooks.d/cfn-auto-reloader.conf"]}
+                  "httpd"   : { "enabled" : "true", "ensureRunning" : "true" }
                 }
               }
             },
@@ -367,33 +338,14 @@
           }
         },
         "Properties": {
-          "ImageId" : { "Fn::FindInMap" : [ "AWSRegionArch2AMI", { "Ref" : "AWS::Region" },
-                            { "Fn::FindInMap" : [ "AWSInstanceType2Arch", { "Ref" : "InstanceType" }, "Arch" ] } ] },
+          "ImageId" : "ami-0d758c1134823146a" ,
           "InstanceType"   : { "Ref" : "InstanceType" },
           "SecurityGroups" : [ {"Ref" : "WebServerSecurityGroup"} ],
           "KeyName"        : { "Ref" : "KeyName" },
           "UserData"       : { "Fn::Base64" : { "Fn::Join" : ["", [
                "#!/bin/bash -xe\n",
-               "yum update -y aws-cfn-bootstrap\n",
-  
-               "# Install the files and packages from the metadata\n",
-               "/opt/aws/bin/cfn-init -v ",
-               "         --stack ", { "Ref" : "AWS::StackName" },
-               "         --resource WebServerInstance ",
-               "         --configsets InstallAndRun ",
-               "         --region ", { "Ref" : "AWS::Region" }, "\n",
-  
-               "# Signal the status from cfn-init\n",
-               "/opt/aws/bin/cfn-signal -e $? ",
-               "         --stack ", { "Ref" : "AWS::StackName" },
-               "         --resource WebServerInstance ",
-               "         --region ", { "Ref" : "AWS::Region" }, "\n"
+               "yum update -y aws-cfn-bootstrap\n"
           ]]}}        
-        },
-        "CreationPolicy" : {
-          "ResourceSignal" : {
-            "Timeout" : "PT5M"
-          }
         }
       },
       
