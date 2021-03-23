@@ -5,7 +5,7 @@
 # Compress the web folders
 apache_files_zip(){
   echo "Compressing apache server files"
-  sudo zip -r apache_files.zip /var/www/html/
+  sudo zip -r -j apache_files.zip /var/www/html/
   if [ `echo $? -eq 0` ];
   then
     echo "zipped succesfully : apache_files.zip"
