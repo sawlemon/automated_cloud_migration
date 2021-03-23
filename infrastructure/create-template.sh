@@ -2,4 +2,5 @@
 
 aws cloudformation create-stack \
 --stack-name myteststack \
---template-body file://infrastructure.json
+--template-body file://infrastructure.json \
+--capabilities CAPABILITY_IAM
