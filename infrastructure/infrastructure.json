@@ -332,13 +332,6 @@
                 "02_create_database" : {
                   "command" : { "Fn::Join" : ["", ["mysql -u root --password='", { "Ref" : "DBRootPassword" }, "' < /tmp/setup.mysql"]]},
                   "test" : { "Fn::Join" : ["", ["$(mysql ", { "Ref" : "DBName" }, " -u root --password='", { "Ref" : "DBRootPassword" }, "' >/dev/null 2>&1 </dev/null); (( $? != 0 ))"]]}
-                },
-                "03_install aws_cli" : {
-                  "command" : "sudo apt -y update && sudo apt -y install awscli"
-                },
-                "03_copys3_bucket" : {
-                    "command" :  "aws s3 cp s3://automated-cloud-management-2021-03-14 /home/ubuntu"
-                    
                 }
               }
             }
@@ -354,8 +347,10 @@
           "KeyName"        : { "Ref" : "KeyName" },
           "UserData"       : { "Fn::Base64" : { "Fn::Join" : ["", [
                "#!/bin/bash -xe\n",
-               "yum update -y aws-cfn-bootstrap\n"
-          ]]}}        
+               "sudo apt -y update\n",
+               "sudo apt -y install awscli\n",
+               "aws s3 cp s3://automated-cloud-management-2021-03-14 /home/ubuntu"
+          ]]}}
         }
       },
       
