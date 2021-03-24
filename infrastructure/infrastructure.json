@@ -260,7 +260,7 @@
           "Path" : "/",
           "Roles" : [
             {
-              "Ref" : "ListS3BucketsRole"
+              "Ref" : "AccessS3BucketsRole"
             }
           ]
         }
