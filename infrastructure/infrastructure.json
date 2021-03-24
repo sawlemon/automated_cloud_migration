@@ -240,9 +240,7 @@
                "sudo unzip -o /home/ubuntu/apache_files.zip  -d  /var/www/html/ \n",
                "sudo systemctl restart apache2 \n",
                "sudo mysql -u root < /home/ubuntu/mysql_database.sql \n",
-               "touch /home/ubuntu/sql-pass.sql",
-               "",
-               "sudo mysql -u root "
+               "sudo mysql -u root < /home/ubuntu/sql-pass.sql \n"
           ]]}}
         }
       },
