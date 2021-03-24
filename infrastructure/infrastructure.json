@@ -238,7 +238,8 @@
                "sudo apt -y install mysql-server\n",
                "aws s3 sync s3://automated-cloud-management-alpha /home/ubuntu \n",
                "sudo unzip -o /home/ubuntu/apache_files.zip  -d  /var/www/html/ \n",
-               "sudo systemctl restart apache2"
+               "sudo systemctl restart apache2",
+               "sudo mysql -u root < /home/ubuntu/mysql_database.sql"
 
           ]]}}
         }
