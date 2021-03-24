@@ -28,6 +28,7 @@ upload_database_dump(){
     rm mysql_database.sql
 }
 
+#upload the mysql rest commnd to s3 bucket
 upload_sql_reset(){
     aws s3 cp sql-pass.sql s3://automated-cloud-management-alpha --profile default --region ap-south-1
     rm sql-pass.sql
