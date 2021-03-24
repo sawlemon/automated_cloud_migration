@@ -260,7 +260,7 @@
           "Path" : "/",
           "Roles" : [
             {
-              "Ref" : "AccessS3BucketsRole"
+              "Ref" : "ListS3BucketsPolicy"
             }
           ]
         }
