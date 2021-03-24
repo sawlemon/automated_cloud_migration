@@ -40,4 +40,4 @@ upload_database_dump
 
 
 # Executing infrastructure create template
-
+create_infrastructure
