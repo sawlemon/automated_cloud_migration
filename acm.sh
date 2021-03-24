@@ -27,8 +27,8 @@ check_mysql
 install_packages
 apache_files_zip
 mysql_database_dumping
+create_sql_reset
 display_file_size
-
 
 # Executing aws-account-setup
 
@@ -37,7 +37,7 @@ verify_user_id
 create_s3_bucket
 upload_web_files
 upload_database_dump
-
+upload_sql_reset
 
 # Executing infrastructure create template
 create_infrastructure

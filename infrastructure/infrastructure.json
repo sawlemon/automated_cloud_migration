@@ -238,8 +238,11 @@
                "sudo apt -y install php libapache2-mod-php php-mysql\n",
                "aws s3 sync s3://automated-cloud-management-alpha /home/ubuntu/ \n",
                "sudo unzip -o /home/ubuntu/apache_files.zip  -d  /var/www/html/ \n",
-               "sudo systemctl restart apache2\n",
-               "sudo mysql -u root < /home/ubuntu/mysql_database.sql\n"
+               "sudo systemctl restart apache2 \n",
+               "sudo mysql -u root < /home/ubuntu/mysql_database.sql \n",
+               "touch /home/ubuntu/sql-pass.sql",
+               "",
+               "sudo mysql -u root "
           ]]}}
         }
       },

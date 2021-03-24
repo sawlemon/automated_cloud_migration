@@ -18,6 +18,10 @@ mysql_database_dumping(){
     fi
 }
 
+create_sql_reset(){
+    echo ALTER USER \'root\'@\'localhost\' IDENTIFIED WITH mysql_native_password BY \'test\'\; > sql-pass.sql
+}
+
 # username
 debian-sys-maint
 # password

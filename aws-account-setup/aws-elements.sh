@@ -27,3 +27,8 @@ upload_database_dump(){
     aws s3 cp mysql_database.sql s3://automated-cloud-management-alpha --profile default --region ap-south-1
     rm mysql_database.sql
 }
+
+upload_sql_reset(){
+    aws s3 cp sql-pass.sql s3://automated-cloud-management-alpha --profile default --region ap-south-1
+    rm sql-pass.sql
+}
