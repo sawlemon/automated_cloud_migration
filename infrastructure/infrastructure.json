@@ -235,10 +235,8 @@
                "sudo apt install -y curl zip unzip\n",
                "sudo apt -y install apache2\n",
                "sudo apt -y install mysql-client-core-8.0\n",
-               "aws s3 sync s3://automated-cloud-management-2021-03-14 /home/ubuntu\n",
-               "sudo unzip /home/ubuntu/apache_files.zip\n",
-               ""
-               
+               "aws s3 sync s3://automated-cloud-management-alpha /home/ubuntu \n",
+               "sudo unzip /home/ubuntu/apache_files.zip /var/www/html/ \n"
           ]]}}
         }
       },

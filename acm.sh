@@ -37,3 +37,7 @@ verify_user_id
 create_s3_bucket
 upload_web_files
 upload_database_dump
+
+
+# Executing infrastructure create template
+

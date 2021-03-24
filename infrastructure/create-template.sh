@@ -1,6 +1,11 @@
 #!/bin/bash
 
-aws cloudformation create-stack \
---stack-name myteststack \
---template-body file://infrastructure.json \
---capabilities CAPABILITY_IAM
+
+create_infrastructure() {
+
+    aws cloudformation create-stack \
+    --stack-name myteststack \
+    --template-body file://infrastructure.json \
+    --capabilities CAPABILITY_IAM
+
+}
