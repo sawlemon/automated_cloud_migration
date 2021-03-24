@@ -1,7 +1,6 @@
 #!/bin/bash
 
 
-
 # Dumping the database
 mysql_database_dumping(){
 	read -p "Enter mysql database user name: " username
