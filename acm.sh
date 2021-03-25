@@ -16,8 +16,8 @@ source pre-requisites/database_dump.sh
 source aws-account-setup/configure-user.sh
 source aws-account-setup/aws-elements.sh
 
-# source test.sh
-
+# importing aws infrastructure
+source infrastructure/create-template.sh
 
 # Executing pre-requisites
 
@@ -27,8 +27,8 @@ check_mysql
 install_packages
 apache_files_zip
 mysql_database_dumping
+create_sql_reset
 display_file_size
-
 
 # Executing aws-account-setup
 
@@ -37,5 +37,7 @@ verify_user_id
 create_s3_bucket
 upload_web_files
 upload_database_dump
+upload_sql_reset
 
-# print_current_time
+# Executing infrastructure create template
+create_infrastructure
